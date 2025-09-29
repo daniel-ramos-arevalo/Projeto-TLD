@@ -1,0 +1,277 @@
+:root {
+  --azul: #0046ff;       /* Define a cor azul vibrante da marca. */
+  --escuro: #002b99;       /* Define uma versão mais escura do azul. */
+  --cor-letra: #f0f0f5;       /* Define a cor do texto principal para fundos escuros. */
+  --cinza: #b0b0c0;            /* Define uma cor cinza clara para textos secundários. */
+  background: #1a1a2e;               /* Define a cor de fundo principal, um tom de roxo/azul escuro. */
+  --cartao-cor: #2a2a44;          /* Define a cor de fundo dos cartões, um pouco mais clara que o fundo principal. */
+  --arredondar: 24px;           /* Define um raio de canto grande para elementos maiores. */
+  --foto: 12px;           /* Define um raio de canto menor para elementos internos. */
+  --container-width: 1200px;   /* Define a largura máxima do conteúdo central. */
+}
+
+/* ===== Base e Resets ===== */
+*, *::before, *::after {
+  box-sizing: border-box;      /* Garante que o padding e a borda sejam incluídos na largura e altura total do elemento. */
+  margin: 0;                   /* Remove a margem padrão de todos os elementos. */
+  padding: 0;                  /* Remove o padding padrão de todos os elementos. */
+}
+
+html, body, #root {
+  height: 100%;                /* Garante que o corpo da página ocupe a altura total da tela. */
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; /* Define a fonte principal, com opções de fallback. */
+  color: var(--cor-letra);    /* Define a cor do texto principal. */
+}
+
+
+
+.base {
+  
+  width: 100%;                 /* Ocupa a largura total da tela. */
+  max-width: var(--container-width); /* Limita a largura do container para não esticar demais. */
+}
+
+a {
+  color: var(--azul);    /* Define a cor azul para todos os links. */
+  text-decoration: none;       /* Remove o sublinhado padrão dos links. */
+}
+
+/* ===== Seção de Cabeçalho (Header) Elegante e Compacto ===== */
+header {
+  background: linear-gradient(145deg, var(--azul), var(--escuro) 80%); /* Cria um gradiente de cor no fundo do cabeçalho. */
+  padding: 30px 0 40px;        /* Define o espaçamento interno do cabeçalho, diminuindo a altura total. */
+  text-align: center;          /* Centraliza todo o conteúdo dentro do cabeçalho. */
+  box-shadow: 0 15px 50px rgba(0, 70, 255, 0.45); /* Adiciona uma sombra azul para dar um efeito de profundidade. */
+  border-bottom-left-radius: 40px; /* Arredonda o canto inferior esquerdo. */
+  border-bottom-right-radius: 40px;/* Arredonda o canto inferior direito. */
+  display: flex;
+  justify-content: center; /* eixo horizontal */
+  align-items: center;     /* eixo vertical */
+}
+
+/* Destaque da Imagem com Luz */
+header img {
+  width: 130px;                /* Define a largura da imagem. */
+  margin-bottom: 18px;         /* Define o espaçamento abaixo da imagem. */
+  border: 5px solid rgba(255, 255, 255, 0.6); /* Adiciona uma borda branca sutil. */
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.4)); /* Cria um efeito de brilho ao redor da imagem. */
+  transition: all 0.3s ease;   /* Adiciona uma transição suave para o efeito de hover. */
+}
+
+
+header img:hover {
+  transform: scale(1.05);      /* Aumenta o tamanho da imagem ao passar o mouse. */
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 40px rgba(255, 255, 255, 0.6)); /* Intensifica o brilho no hover. */
+}
+
+header h1 {
+  font-size: 38px;             /* Define o tamanho da fonte do título principal. */
+  margin-bottom: 10px;         /* Espaçamento abaixo do título. */
+  font-weight: 800;            /* Define o peso da fonte para extra-negrito. */
+  letter-spacing: -0.5px;      /* Reduz o espaçamento entre as letras para um visual mais limpo. */
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra sutil ao texto do título. */
+}
+
+header p {
+  font-size: 19px;             /* Define o tamanho da fonte dos parágrafos no cabeçalho. */
+  opacity: 0.95;               /* Reduz a opacidade para um efeito mais suave. */
+  font-weight: 300;            /* Define um peso de fonte mais leve. */
+  max-width: 600px;            /* Limita a largura dos parágrafos. */
+  margin: 0 auto;              /* Centraliza os parágrafos. */
+}
+
+/* ===== Botões Modernos ===== */
+
+.detalhes{
+   display: grid;               /* Habilita o sistema de layout de grade (grid). */
+  grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas de largura igual. */
+ 
+}
+
+.botões {
+  display: inline-block;       /* Exibe o botão como um bloco de linha. */
+  padding: 14px 28px;          /* Espaçamento interno para os botões. */
+  border-radius: 50px;         /* Arredonda completamente os cantos, criando um formato de pílula. */
+  font-weight: 700;            /* Deixa a fonte em negrito. */
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); /* Adiciona uma transição com uma curva de velocidade customizada. */
+  text-transform: uppercase;   /* Transforma o texto em letras maiúsculas. */
+  letter-spacing: 0.5px;       /* Adiciona um pequeno espaçamento entre as letras. */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra padrão. */
+  cursor: pointer;             /* Altera o cursor do mouse para indicar que é clicável. */
+}
+
+.cor-botão {
+  background: #fff;            /* Define o fundo branco. */
+  color: var(--azul);    /* Define a cor do texto azul. */
+}
+
+.cor-botão:hover {
+  background: var(--escuro); /* Muda o fundo para azul escuro ao passar o mouse. */
+  color: var(--cor-letra);    /* Muda a cor do texto para branco no hover. */
+  transform: translateY(-3px); /* Move o botão ligeiramente para cima no hover. */
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25); /* Intensifica a sombra no hover. */
+}
+
+
+
+/* ===== Seções Principais (Main) ===== */
+main {
+  padding: 80px 0;             /* Adiciona espaçamento vertical ao conteúdo principal. */
+}
+
+section {
+  margin-bottom: 80px;         /* Adiciona espaçamento entre as seções. */
+}
+
+section h2 {
+  font-size: 32px;             /* Define o tamanho da fonte dos títulos de seção. */
+  margin-bottom: 24px;         /* Adiciona espaçamento abaixo do título. */
+  font-weight: 800;            /* Define um peso de fonte extra-negrito. */
+  text-align: center;          /* Centraliza o texto. */
+  position: relative;          /* Usado para posicionar o pseudo-elemento `::after`. */
+}
+
+section h2::after {
+  content: '';                 /* Cria um pseudo-elemento (uma linha decorativa). */
+  display: block;              /* Exibe o pseudo-elemento como um bloco. */
+  width: 60px;                 /* Define a largura da linha. */
+  height: 4px;                 /* Define a altura da linha. */
+  background: var(--azul); /* Define a cor da linha. */
+  margin: 12px auto 0;         /* Centraliza a linha abaixo do título. */
+  border-radius: 2px;          /* Arredonda os cantos da linha. */
+}
+
+section p {
+  color: var(--cinza);         /* Define a cor dos parágrafos. */
+  max-width: 700px;            /* Limita a largura do parágrafo para melhor legibilidade. */
+  margin: 0 auto 24px;         /* Centraliza o parágrafo horizontalmente. */
+  text-align: center;          /* Centraliza o texto do parágrafo. */
+}
+
+/* ===== Seções de Tema (Cards) ===== */
+.quadrado {
+  background: var(--cartao-cor);  /* Define a cor de fundo do cartão. */
+  border-radius: var(--arredondar); /* Arredonda os cantos do cartão. */
+  padding: 40px;               /* Define o espaçamento interno do cartão. */
+  margin-bottom: 40px;         /* Adiciona espaçamento abaixo do cartão. */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra para criar profundidade. */
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1); /* Adiciona uma transição para o efeito de hover. */
+}
+
+.quadrado:hover {
+  transform: translateY(-10px); /* Move o cartão para cima no hover. */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3); /* Intensifica a sombra no hover. */
+}
+
+.quadrado h3 {
+  color: var(--azul);    /* Define a cor do título dentro do cartão. */
+  font-size: 24px;             /* Define o tamanho da fonte do título do cartão. */
+  margin-bottom: 16px;         /* Adiciona espaçamento abaixo do título. */
+  font-weight: 700;            /* Deixa a fonte em negrito. */
+}
+
+
+
+.quadrado ul li, .quadrado ol li {
+  margin-bottom: 10px;         /* Adiciona espaçamento entre os itens da lista. */
+}
+
+ 
+
+/* ===== Cards e Grid (Aprimorados) ===== */
+
+
+.foto {
+  display: grid;               /* Habilita o sistema de layout de grade (grid). */
+  grid-template-columns: repeat(2, 1fr); /* Cria 2 colunas de largura igual. */
+  gap: 40px;                   /* Adiciona espaçamento entre as colunas. */
+}
+
+/* ===== Palestrantes (Detalhe) ===== */
+.pessoa {
+  display: flex;               /* Habilita o layout flexbox. */
+  align-items: center;         /* Alinha os itens ao centro verticalmente. */
+  gap: 20px;                   /* Adiciona espaçamento entre a imagem e o texto. */
+  padding: 20px;               /* Adiciona espaçamento interno. */
+  background: var(--cartao-cor);  /* Define o fundo do cartão do palestrante. */
+  border-radius: var(--foto); /* Arredonda os cantos. */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04); /* Adiciona uma sombra sutil. */
+}
+
+.pessoa img {
+  width: 80px;                 /* Define a largura da imagem. */
+  border-radius: 50%;          /* Transforma a imagem em um círculo. */
+  border: 4px solid var(--azul); /* Adiciona uma borda colorida à imagem. */
+}
+
+
+.pessoa .meta small {
+  display: block;              /* Faz com que a descrição ocupe uma linha inteira. */
+}
+
+/* ===== Programação (Toque de Cor) ===== */
+.cores {
+  display: flex;               /* Habilita o layout flexbox. */
+  justify-content: space-between; /* Distribui os itens para as extremidades. */
+  align-items: center;         /* Alinha os itens ao centro verticalmente. */
+  padding: 16px 24px;          /* Adiciona espaçamento interno. */
+  background: rgba(0, 70, 255, 0.07); /* Define um fundo azul semi-transparente. */
+  border-left: 5px solid var(--azul); /* Adiciona uma linha vertical azul à esquerda. */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Adiciona uma sombra sutil. */
+}
+
+.cores time {
+  font-weight: 700;            /* Deixa o horário em negrito. */
+  color: var(--azul);    /* Define a cor do horário para destacar. */
+}
+
+/* ===== Rodapé (Footer) Sofisticado ===== */
+footer {
+   background: linear-gradient(145deg, var(--azul), var(--escuro) 80%); /* Cria um gradiente de cor no fundo do cabeçalho. */
+  padding: 30px 0 40px;        /* Define o espaçamento interno do cabeçalho, diminuindo a altura total. */
+  text-align: center;          /* Centraliza todo o conteúdo dentro do cabeçalho. */
+  box-shadow: 0 15px 50px rgba(0, 70, 255, 0.45); /* Adiciona uma sombra azul para dar um efeito de profundidade. */
+ 
+}
+
+
+/* ===== Responsividade ===== */
+@media (max-width: 900px) {    /* Aplica as seguintes regras em telas com até 900px de largura. */
+  header {
+    padding: 25px 0 35px;      /* Ajusta o padding para telas menores. */
+  }
+  
+  header h1 {
+    font-size: 28px;           /* Reduz o tamanho do título para caber na tela. */
+  }
+  
+  header p {
+    font-size: 17px;           /* Reduz o tamanho da fonte do parágrafo. */
+  }
+
+  header img {
+    width: 100px;              /* Reduz a largura da imagem. */
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7)); /* Ajusta o brilho da imagem. */
+  }
+
+  .base {
+    
+    grid-template-columns: 1fr; /* Muda a grade de 2 colunas para 1 coluna. */
+    gap: 24px;                 /* Ajusta o espaçamento entre os itens. */
+  }
+
+  main {
+    padding: 60px 0;           /* Reduz o padding do conteúdo principal. */
+  }
+
+  section {
+    margin-bottom: 60px;       /* Reduz o espaçamento entre as seções. */
+  }
+
+  .botões {
+    padding: 12px 24px;        /* Reduz o padding dos botões. */
+  }
+}
